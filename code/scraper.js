@@ -232,18 +232,6 @@ function startAgent() {
   agent.start();
   log("[" + new Date().toUTCString() + "]: agent started");
 }
-var forever = require('forever');
-
-var child = new (forever.Monitor)('scaper.js', {
-  max: 3,
-  silent: true,
-  options: []
-});
-
-child.on('exit', this.callback);
-child.start();
-
-forever.startServer(child);
 
 // Do the dirty business:
 startAgent();
