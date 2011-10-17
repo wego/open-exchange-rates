@@ -21,6 +21,7 @@ _ = require('underscore'),
 httpAgent = require('http-agent'),
 async = require('async'),
 date = require('datejs'),
+forever= require('forever'),
 fs = require('fs'),
 exec = require('child_process').exec;
 
@@ -232,6 +233,8 @@ function startAgent() {
   log("[" + new Date().toUTCString() + "]: agent started");
 }
 
+
+forever.startServer(child);
 
 // Do the dirty business:
 startAgent();
