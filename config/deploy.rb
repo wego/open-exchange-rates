@@ -19,7 +19,7 @@ namespace :deploy do
   end
 
   task :post_update_code do
-    run "cd #{current_path} && forever start -l #{current_path}/log/scraper.js code/scraper.js --log" 
+    run "cd #{current_path} && forever start -l #{current_path}/log/scraper.log code/scraper.js --log" 
   end
 
 
