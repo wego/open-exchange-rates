@@ -197,13 +197,13 @@ function startAgent() {
 
     log("[" + new Date().toUTCString() + "]: agent finished");
     exec('git checkout master', function(error, stdout, stderr){
-	    log('stdout: '+stdout);
-	    log('stderr: '+stderr);
-	    if (error!=null){
-		log('error: '+error);
-	    }
+      log('stdout: '+stdout);
+      log('stderr: '+stderr);
+      if (error!=null){
+        log('error: '+error);
+      }
 
-	    });
+    });
     // Write the latest and historical files, then commit and push to git when all done:
     async.parallel(
       [
@@ -231,7 +231,7 @@ function startAgent() {
         });
       }
       else{
-	      log('error: '+error);
+        log('error: '+error);
       }
     }
     );

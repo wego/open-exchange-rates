@@ -3,6 +3,7 @@ err.log
 out.log
 log/*.log
 log/*
+log
 tmp/
 forever.log
 public/*
