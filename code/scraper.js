@@ -21,7 +21,6 @@ _ = require('underscore'),
 httpAgent = require('http-agent'),
 async = require('async'),
 date = require('datejs'),
-forever= require('forever'),
 fs = require('fs'),
 exec = require('child_process').exec;
 
