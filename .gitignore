@@ -1,4 +1,9 @@
 .DS_Store
 err.log
 out.log
+log/*.log
+log/*
+tmp/
 forever.log
+public/*
+REVISION
