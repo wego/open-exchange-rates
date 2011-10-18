@@ -196,7 +196,7 @@ function startAgent() {
     };
 
     log("[" + new Date().toUTCString() + "]: agent finished");
-
+    exec('git checkout master')
     // Write the latest and historical files, then commit and push to git when all done:
     async.parallel(
       [
@@ -216,7 +216,7 @@ function startAgent() {
       // To do: add some error/success logging:
       if( !err && !argv.nocommit ) {
         // Commit changes to git repository and push when done:
-        exec('git checkout master && git add . && git commit -am "exchange rates as of [' + new Date().toUTCString() + ']"', function(err, stdout, stderr) {
+        exec('git add . && git commit -am "exchange rates as of [' + new Date().toUTCString() + ']"', function(err, stdout, stderr) {
           if ( !argv.nopush ) {
             //hack for capistrano
             exec('git push origin master && git checkout deploy');
