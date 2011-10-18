@@ -202,40 +202,41 @@ function startAgent() {
       if (error!=null){
         log('error: '+error);
       }
+      else{
+        // Write the latest and historical files, then commit and push to git when all done:
+        async.parallel(
+          [
+            function(callback) {
+          fs.writeFile("latest.json", JSON.stringify(api, false, "\t"), function(err) {
+            callback(err);
+          });
+        },
+        function(callback) {
+          var filename = "./historical/" + (getUTC()).toString("yyyy-MM-dd") + ".json";
+          fs.writeFile(filename, JSON.stringify(api, false, "\t"), function(err) {
+            callback(err);
+          });
+        }
+        ],
+        function(err) {
+          // To do: add some error/success logging:
+          if( !err && !argv.nocommit ) {
+            // Commit changes to git repository and push when done:
+            exec('git add . && git commit -am "exchange rates as of [' + new Date().toUTCString() + ']"', function(err, stdout, stderr) {
+              if ( !argv.nopush ) {
+                //hack for capistrano
+                exec('git push origin master && git checkout deploy');
+              }
+            });
+          }
+          else{
+            log('error: '+error);
+          }
+        }
+        );
+      }
 
     });
-    // Write the latest and historical files, then commit and push to git when all done:
-    async.parallel(
-      [
-        function(callback) {
-      fs.writeFile("latest.json", JSON.stringify(api, false, "\t"), function(err) {
-        callback(err);
-      });
-    },
-    function(callback) {
-      var filename = "./historical/" + (getUTC()).toString("yyyy-MM-dd") + ".json";
-      fs.writeFile(filename, JSON.stringify(api, false, "\t"), function(err) {
-        callback(err);
-      });
-    }
-    ],
-    function(err) {
-      // To do: add some error/success logging:
-      if( !err && !argv.nocommit ) {
-        // Commit changes to git repository and push when done:
-        exec('git add . && git commit -am "exchange rates as of [' + new Date().toUTCString() + ']"', function(err, stdout, stderr) {
-          if ( !argv.nopush ) {
-            //hack for capistrano
-            exec('git push origin master && git checkout deploy');
-          }
-        });
-      }
-      else{
-        log('error: '+error);
-      }
-    }
-    );
-
   });
 
   // Start the agent and log it:
