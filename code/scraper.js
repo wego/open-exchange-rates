@@ -216,9 +216,10 @@ function startAgent() {
       // To do: add some error/success logging:
       if( !err && !argv.nocommit ) {
         // Commit changes to git repository and push when done:
-        exec('git add . && git commit -am "exchange rates as of [' + new Date().toUTCString() + ']"', function(err, stdout, stderr) {
+        exec('git checkout master && git add . && git commit -am "exchange rates as of [' + new Date().toUTCString() + ']"', function(err, stdout, stderr) {
           if ( !argv.nopush ) {
-            exec('git push origin master');
+            //hack for capistrano
+            exec('git push origin master && git checkout deploy');
           }
         });
       }
