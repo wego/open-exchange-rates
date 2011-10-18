@@ -8,7 +8,7 @@ namespace :deploy do
   before 'deploy:update', 'deploy:pre_update_code'
 
   after 'deploy', 'deploy:cleanup'
-  after 'deploy:update_code', 'deploy:post_update_code'
+  after 'deploy:symlink', 'deploy:post_update_symlink'
 
   task :start do ; end
   task :stop do ; end
@@ -18,8 +18,8 @@ namespace :deploy do
     run 'forever stop code/scraper.js'
   end
 
-  task :post_update_code do
-    run "cd #{current_path} &&  forever start -o #{current_path}/log/scraper.log -e #{current_path}/scraper.err.log code/scraper.js --log"
+  task :post_update_symlink do
+    run "cd #{current_path} &&  forever start -o #{current_path}/log/scraper.log -e #{current_path}/log/scraper_err.log code/scraper.js --log"
   end
 
 
