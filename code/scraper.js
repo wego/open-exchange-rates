@@ -27,7 +27,7 @@ exec = require('child_process').exec;
 
 // Make sure we have all default arguments:
 argv = _.defaults(argv, {
-  sleep : 3600000,  // time between crawls, default 1 hour
+  sleep : 21600000,  // time between crawls, default 1 hour
   throttle : 10000, // time between requests, default 10 secs
   nocommit : false, // pass --nocommit to run the scraper without `git commit`
   nopush : false,   // pass --nopush to run without `git push`
