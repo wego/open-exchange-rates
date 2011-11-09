@@ -1,7 +1,7 @@
 {
 	"disclaimer": "This data is collected from Google Calculator and provided free of charge for informational purposes only, with no guarantee whatsoever of accuracy, validity, availability or fitness for any purpose; use at your own risk. Other than that - have fun, and please share/watch/fork if you think data like this should be free!",
 	"license": "http://www.opensource.org/licenses/GPL-3.0",
-	"timestamp": 1320852498,
+	"timestamp": 1320874099,
 	"base": "USD",
 	"rates": {
 		"AED": 3.67300014,
@@ -66,8 +66,8 @@
 		"PKR": 86.3483292,
 		"PLN": 3.19269511,
 		"PYG": 4237.28814,
-		"QAR": 3.6411965,
-		"RON": 3.18039857,
+		"QAR": 3.64130257,
+		"RON": 3.19450035,
 		"RSD": 74.682599,
 		"RUB": 30.3204876,
 		"SAR": 3.75030471,
