@@ -1,7 +1,7 @@
 {
 	"disclaimer": "This data is collected from Google Calculator and provided free of charge for informational purposes only, with no guarantee whatsoever of accuracy, validity, availability or fitness for any purpose; use at your own risk. Other than that - have fun, and please share/watch/fork if you think data like this should be free!",
 	"license": "http://www.opensource.org/licenses/GPL-3.0",
-	"timestamp": 1322666931,
+	"timestamp": 1322688531,
 	"base": "USD",
 	"rates": {
 		"AED": 3.67300014,
@@ -13,10 +13,10 @@
 		"BND": 1.2862001,
 		"BOB": 7.01001731,
 		"BRL": 1.81500062,
-		"BWP": 7.47943156,
+		"BWP": 7.61614623,
 		"CAD": 1.02180011,
 		"CHF": 0.913500626,
-		"CLP": 520.020801,
+		"CLP": 526.87039,
 		"CNY": 6.37889352,
 		"COP": 1949.31774,
 		"CRC": 500,
@@ -47,7 +47,7 @@
 		"LKR": 113.895216,
 		"LTL": 2.57349914,
 		"LVL": 0.51979915,
-		"MAD": 8.32653333,
+		"MAD": 8.40089049,
 		"MDL": 11.8716908,
 		"MKD": 46.2491906,
 		"MUR": 29.1996379,
@@ -73,7 +73,7 @@
 		"SAR": 3.75020626,
 		"SCR": 12.7135883,
 		"SEK": 6.81788741,
-		"SGD": 1.2864003,
+		"SGD": 1.3045004,
 		"SLL": 4329.00433,
 		"SVC": 8.74997813,
 		"THB": 30.9904549,
@@ -89,7 +89,7 @@
 		"UZS": 1779.35943,
 		"VND": 20833.3333,
 		"YER": 217.864924,
-		"ZAR": 8.1621326,
+		"ZAR": 8.42126538,
 		"ZMK": 5076.14213
 	}
 }
